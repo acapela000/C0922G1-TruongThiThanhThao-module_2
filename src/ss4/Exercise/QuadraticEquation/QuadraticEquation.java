@@ -1,4 +1,4 @@
-package ss4.Exercise;
+package ss4.Exercise.QuadraticEquation;
 
 public class QuadraticEquation {
 
@@ -35,7 +35,7 @@ public class QuadraticEquation {
     }
 
     public double getDiscriminant(){
-        return (b*2-4*a*c);
+        return (b * 2 - 4 * a * c);
     }
 
     public double getRoot1() {
@@ -43,7 +43,7 @@ public class QuadraticEquation {
     }
 
     public double getRoot2() {
-        return (-b-Math.sqrt(this.getDiscriminant()))/(2*a);
+        return (-b - Math.sqrt(this.getDiscriminant())) / (2 * a);
     }
 
 }

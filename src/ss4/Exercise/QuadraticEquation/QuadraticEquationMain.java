@@ -1,4 +1,6 @@
-package ss4.Exercise;
+package ss4.Exercise.QuadraticEquation;
+
+import ss4.Exercise.QuadraticEquation.QuadraticEquation;
 
 import java.util.Scanner;
 
@@ -16,20 +18,15 @@ public class QuadraticEquationMain {
         double delta = equation.getDiscriminant();
 
         if (delta < 0) {
-            System.out.println("the equation has no roots");
+            System.out.println("The equation has no roots");
         } else if (delta == 0) {
             double root1 = equation.getRoot1();
-            System.out.println("1 nghiem = " + root1);
+            System.out.println("The equation has only 1 root, root1 = root2 = " + root1);
         } else {
             double root1 = equation.getRoot1();
             double root2 = equation.getRoot2();
-            System.out.println("nghiem 1 = " + root1);
-            System.out.println("nghiem 2 = " + root2);
+            System.out.println("The first root = " + root1);
+            System.out.println("The second root = " + root2);
         }
-
-        System.out.println("The first ? is "+equation.getRoot1());
-        System.out.println("The second ? is "+equation.getRoot2());
-        System.out.println("The discriminant is "+equation.getDiscriminant());
-
     }
 }
