@@ -10,10 +10,5 @@ public class CircleCylinderMain {
 
         System.out.println(circle.toString());
         System.out.println(cylinder.toString());
-
-//        System.out.println("Area of circle = " + circle.getArea());
-//        System.out.println("Color of circle is " + circle.getColor());
-//        System.out.println("Color of cylinder is " + cylinder.getColor());
-//        System.out.println("Height of cylinder = " + ((Cylinder)cylinder).getHeight());
     }
 }
