@@ -4,9 +4,6 @@ import java.util.*;
 
 public class ProductManager  {
     static List<Product> arrayList = new ArrayList<>();
-    static String editID;
-    static int editPrice;
-    static String editName;
 
     private static int sortLogic(boolean isAscending, Product o1, Product o2) {
         if (isAscending) {
