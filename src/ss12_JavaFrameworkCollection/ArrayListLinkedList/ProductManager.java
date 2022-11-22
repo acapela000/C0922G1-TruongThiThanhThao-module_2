@@ -27,6 +27,43 @@ public class ProductManager  {
         }
     }
 
+    private static void addProduct(String addProductID,String addProductName,int addProductPrice) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Input product ID: ");
+        addProductID = sc.nextLine();
+        System.out.print("Input product name: ");
+        addProductName = sc.nextLine();
+        System.out.print("Input product Price: ");
+        addProductPrice = Integer.parseInt(sc.nextLine());
+
+        System.out.println("Your new added product: productID='"
+                + addProductID + "', productName='" + addProductName
+                + "', productPrice='" + addProductPrice + "'");
+
+        Product product5 = new Product(addProductID, addProductName, addProductPrice);
+        arrayList.add(product5);
+    }
+
+    private static void editProduct(String editProductID,String editProductName,int editProductPrice) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Input index of product U wanna edit: ");
+        int indexDeleteProct = Integer.parseInt(sc.nextLine());
+
+        System.out.println("Product U wanna edit: " + arrayList.get(indexDeleteProct));
+
+        System.out.print("Edit product ID: ");
+        String eidtProductID = arrayList.get(indexDeleteProct).setProductID(sc.nextLine());
+
+        System.out.print("Edit product name: ");
+        String eidtProductName = arrayList.get(indexDeleteProct).setProductName(sc.nextLine());
+
+        System.out.print("Edit product price: ");
+        int eidtProductPrice = arrayList.get(indexDeleteProct).setProductPrice(Integer.parseInt(sc.nextLine()));
+
+    }
+
     public static void main(String[] args) {
         Product product1 = new Product("A123", "SamSung", 15000);
         Product product2 = new Product("B123", "iPhone", 20000);
@@ -42,19 +79,19 @@ public class ProductManager  {
         System.out.println();
         sort(false);
 
-//        arrayList.sort((o1, o2) -> o1.compareTo(o2));
-//
-//        for (Product product : arrayList) {
-//            System.out.println("Ascending: " + product);
-//        }
-//
-//        System.out.println();
-//
-//        arrayList.sort((o1, o2) -> o2.compareTo(o1));
-//
-//        for (Product product : arrayList) {
-//            System.out.println("Descending: " + product);
-//        }
+/*        arrayList.sort((o1, o2) -> o1.compareTo(o2));
+
+        for (Product product : arrayList) {
+            System.out.println("Ascending: " + product);
+        }
+
+        System.out.println();
+
+        arrayList.sort((o1, o2) -> o2.compareTo(o1));
+
+        for (Product product : arrayList) {
+            System.out.println("Descending: " + product);
+        }*/
 
         System.out.println();
         menu();
@@ -74,51 +111,14 @@ public class ProductManager  {
                     System.out.println("See U again!^^!");
                     break;
                 }
+
                 if (choiceNumber == 1) { //Add
-                    System.out.print("Input product ID: ");
-                    String addProductID = sc.nextLine();
-                    System.out.print("Input product name: ");
-                    String addProductName = sc.nextLine();
-                    System.out.print("Input product Price: ");
-                    int addProductPrice = Integer.parseInt(sc.nextLine());
-
-                    System.out.println("Your new added product: productID='"
-                            + addProductID + "', productName='" + addProductName
-                            + "', productPrice='" + addProductPrice + "'");
-
-                    Product product5 = new Product(addProductID, addProductName, addProductPrice);
-                    arrayList.add(product5);
-
-                    for (Product product : arrayList) {
-                        System.out.println("List of product after added: " + product);
-                    }
-
+                    addProduct("W123","Oppo",5000);
                     sort(true);
                 }
 
                 if (choiceNumber == 2) { //Edit
-                    System.out.print("Input index of product U wanna edit: ");
-                    int indexDeleteProct = Integer.parseInt(sc.nextLine());
-
-                    System.out.println("Product U wanna edit: " + arrayList.get(indexDeleteProct));
-
-                    System.out.print("Edit product ID: ");
-                    String eidtID = arrayList.get(indexDeleteProct).setProductID(sc.nextLine());
-
-                    System.out.print("Edit product name: ");
-                    String eidtName = arrayList.get(indexDeleteProct).setProductName(sc.nextLine());
-
-                    System.out.print("Edit product price: ");
-                    int eidtPrice = arrayList.get(indexDeleteProct).setProductPrice(Integer.parseInt(sc.nextLine()));
-
-                   /* Product product6 = new Product(editID, editName, editPrice);
-
-                    arrayList.add(product6);*/
-
-                    for (Product product : arrayList) {
-                        System.out.println("List of product after edited: " + product);
-                    }
-
+                    editProduct("W123","Oppo",6000);
                     sort(true);
                 }
 
@@ -133,7 +133,6 @@ public class ProductManager  {
                         }
                     }
                 }
-
         } while (choiceNumber > 0 && choiceNumber < 4) ;
     }
 }
