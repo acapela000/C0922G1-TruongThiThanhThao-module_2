@@ -1,13 +1,9 @@
 package ss12_JavaFrameworkCollection.ArrayListLinkedList;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.util.Comparator;
-
 public class  Product implements Comparable<Product> {
-    String productID;
-    String productName;
-    int productPrice;
+    public static String productID;
+    public static String productName;
+    public static int productPrice;
 
     public void productAdd() {
 
