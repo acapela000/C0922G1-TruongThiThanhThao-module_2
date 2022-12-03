@@ -11,7 +11,10 @@ public class Employee extends Person {
 
     public Employee(int personalCode, int phoneNumber, String dateOfBirth, String gender, String firstName, String lastName, String address, String email) {
         super(personalCode, phoneNumber, dateOfBirth, gender, firstName, lastName, address, email);
+
     }
+
+
 
     @Override
     public String toString() {

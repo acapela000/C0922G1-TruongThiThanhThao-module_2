@@ -1,6 +1,12 @@
 package TestOnly.MVC_.CaseStudyTask1.Service;
 
-public class FacilityServiceImpl implements IFacilityService {
+import TestOnly.MVC_.CaseStudyTask1.Model.Employee;
+
+import java.util.List;
+
+import static TestOnly.MVC_.CaseStudyTask1.Service.EmployeeServiceImpl.employeeList;
+
+public abstract class FacilityServiceImpl implements IFacilityService {
 
     @Override
     public void add() {
@@ -13,8 +19,8 @@ public class FacilityServiceImpl implements IFacilityService {
     }
 
     @Override
-    public void display() {
-
+    public List<Employee> display() {
+    return employeeList;
     }
 
     @Override

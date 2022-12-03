@@ -1,5 +1,9 @@
 package TestOnly.MVC_.CaseStudyTask1.Service;
 
+import TestOnly.MVC_.CaseStudyTask1.Model.Employee;
+
+import java.util.List;
+
 public interface IBookingService extends IService {
     @Override
     void add();
@@ -8,7 +12,7 @@ public interface IBookingService extends IService {
     void edit();
 
     @Override
-    void display();
+    List<Employee> display();
 
     @Override
     void delete();

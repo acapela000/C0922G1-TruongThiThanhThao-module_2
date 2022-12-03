@@ -21,6 +21,14 @@ public abstract class Person {
         this.email = email;
     }
 
+    public int getPersonalCode() {
+        return personalCode;
+    }
+
+    public void setPersonalCode(int personalCode) {
+        this.personalCode = personalCode;
+    }
+
     @Override
     public String toString() {
         return "== Person ==" + "\n" +

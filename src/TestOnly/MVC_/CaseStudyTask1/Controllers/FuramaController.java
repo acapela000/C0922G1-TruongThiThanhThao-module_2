@@ -1,10 +1,17 @@
 package TestOnly.MVC_.CaseStudyTask1.Controllers;
 
+import TestOnly.MVC_.CaseStudyTask1.Model.Employee;
+import TestOnly.MVC_.CaseStudyTask1.Service.EmployeeServiceImpl;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class FuramaController {
     private static int choice;
     private static final Scanner sc = new Scanner(System.in);
+
+    static EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
+
     public static void displayMenu() {
     //do method này là static nên bên Main dùng class gọi method luôn, ko cần tạo đối tượng nữa
 
@@ -56,14 +63,24 @@ public class FuramaController {
         int choice = Integer.parseInt(sc.nextLine());
 
         switch (choice) {
+            case 1:
+                employeeService.display();
+            case 2:
+                employeeService.add();
+                break;
+            case 3:
+                employeeService.delete();
+                break;
+            case 4:
+                employeeService.edit();
+                break;
             case 5:
                 displayMenu();
                 break;
             default:
-                System.out.println("Option not implemented yet");
+                System.out.println("Oops! Waiting for fixing problems");
         }
     }
-
     public static void menuCustomerManagement() {//choice 2
         System.out.println("=== Customer Manager ===");
         System.out.println("1. Display list customers");
@@ -106,6 +123,9 @@ public class FuramaController {
         System.out.println("3. Return Main menu");
         int choice = Integer.parseInt(sc.nextLine());
         switch (choice) {
+            case 1:
+                System.out.println("1. Add new booking");
+                break;
             case 3:
                displayMenu();
                break;
