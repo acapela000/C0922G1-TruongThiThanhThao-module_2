@@ -2,10 +2,19 @@ package TestOnly.MVC_.CaseStudyTask1.Service;
 
 public interface IEmployeeService extends IService {
     @Override
-    void manageQuantity();
+    void add();
 
     @Override
-    void manageQuality();
+    void edit();
 
-    void manageEmployeePromotion();
+    @Override
+    void display();
+
+    @Override
+    void delete();
+
+    @Override
+    void search();
+
+    void manageContractDeadline();
 }

@@ -1,17 +1,24 @@
 package TestOnly.MVC_.CaseStudyTask1.Model;
 
 public class Villa extends Facility {
-    public void manageVillaFloor() {
+    boolean cleaningPool;
+    boolean gardening;
+    boolean petCaring;
+    boolean parkForKids;
+    int numberOfRoom;
 
+    public Villa(int typeOfService, int capasityOfPeople, int timeOfStay, boolean cleaningService, boolean rentCar, String checkInDate, String checkOutDate) {
+        super(typeOfService, capasityOfPeople, timeOfStay, cleaningService, rentCar, checkInDate, checkOutDate);
     }
 
     @Override
-    public void managePrice() {
-
-    }
-
-    @Override
-    public void manageType() {
-
+    public String toString() {
+        return "== Villa ==" + "\n" +
+                "\t cleaningPool: " + cleaningPool + "\n" +
+                "\t gardening=" + gardening + "\n" +
+                "\t petCaring=" + petCaring + "\n" +
+                "\t parkForKids=" + parkForKids + "\n" +
+                "\t numberOfRoom=" + numberOfRoom + "\n" +
+                super.toString();
     }
 }

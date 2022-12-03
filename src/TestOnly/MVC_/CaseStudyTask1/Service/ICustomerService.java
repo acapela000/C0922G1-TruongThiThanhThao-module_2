@@ -2,10 +2,19 @@ package TestOnly.MVC_.CaseStudyTask1.Service;
 
 public interface ICustomerService extends IService {
     @Override
-    void manageQuantity();
+    void add();
 
     @Override
-    void manageQuality();
+    void edit();
 
-    void manageCustomerComplain();
+    @Override
+    void display();
+
+    @Override
+    void delete();
+
+    @Override
+    void search();
+
+    void manageFeedback();
 }

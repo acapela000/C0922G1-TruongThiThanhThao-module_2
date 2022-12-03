@@ -2,10 +2,21 @@ package TestOnly.MVC_.CaseStudyTask1.Service;
 
 public interface IBookingService extends IService {
     @Override
-    void manageQuantity();
+    void add();
 
     @Override
-    void manageQuality();
+    void edit();
 
+    @Override
+    void display();
+
+    @Override
+    void delete();
+
+    @Override
+    void search();
+
+    //extra method
     void manageBookingTime();
+
 }

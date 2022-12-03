@@ -1,18 +1,34 @@
 package TestOnly.MVC_.CaseStudyTask1.Service;
 
 public class CustomerServiceImpl implements ICustomerService {
+
     @Override
-    public void manageQuantity() {
+    public void add() {
 
     }
 
     @Override
-    public void manageQuality() {
+    public void edit() {
 
     }
 
     @Override
-    public void manageCustomerComplain() {
+    public void display() {
+
+    }
+
+    @Override
+    public void delete() {
+
+    }
+
+    @Override
+    public void search() {
+
+    }
+
+    @Override
+    public void manageFeedback() {
 
     }
 }
