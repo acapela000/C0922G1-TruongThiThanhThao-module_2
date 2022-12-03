@@ -9,14 +9,7 @@ public class FuramaController {
     //do method này là static nên bên Main dùng class gọi method luôn, ko cần tạo đối tượng nữa
 
         do {
-            System.out.println("=== Main Menu ===");
-        System.out.println("Choose from menu: ");
-        System.out.println("1. Employee Management");
-        System.out.println("2. Customer Management");
-        System.out.println("3. Facility Management");
-        System.out.println("4. Booking Management");
-        System.out.println("5. Promotion Management");
-        System.out.println("6. Exit");
+        showMenuChoice();
 
         choice = Integer.parseInt(sc.nextLine());
         switch (choice) {
@@ -33,7 +26,7 @@ public class FuramaController {
                 bookingManagement();
                 break;
             case 5://Promotion Management
-
+                promotionManagement();
                 break;
             case 6://Exit
                 System.exit(1);
@@ -42,7 +35,16 @@ public class FuramaController {
         }
     } while(true);
     }
-
+    public static void showMenuChoice() {
+        System.out.println("=== Main Menu ===");
+        System.out.println("Choose from menu: ");
+        System.out.println("1. Employee Management");
+        System.out.println("2. Customer Management");
+        System.out.println("3. Facility Management");
+        System.out.println("4. Booking Management");
+        System.out.println("5. Promotion Management");
+        System.out.println("6. Exit");
+    }
     public static void menuEmployeeManagement() {//choice 1
         System.out.println("=== Employee Management ===");
         System.out.println("1. Display list employees");
@@ -112,7 +114,7 @@ public class FuramaController {
         }
     }
 
-    public static void promotionManagement() {
+    public static void promotionManagement() {//choice 5
         System.out.println("1. Display list customers use service");
         System.out.println("2. Display list customers get voucher");
         System.out.println("3. Return Main menu");
