@@ -20,11 +20,6 @@ public class EmployeeServiceImpl implements IEmployeeService {
     }
 
     @Override
-    public void edit() {
-
-    }
-
-    @Override
     public void edit(String code, Employee employee) {
         for (int i = 0; i < employeeList.size(); i++) {
             if (Objects.equals(employeeList.get(i).getPersonalCode(), code)) {
@@ -34,8 +29,14 @@ public class EmployeeServiceImpl implements IEmployeeService {
     }
 
     @Override
+    public void edit() {
+
+    }
+
+    @Override
     public List<Employee> display() {
-    return employeeList;
+
+        return employeeList;
     }
 
     @Override

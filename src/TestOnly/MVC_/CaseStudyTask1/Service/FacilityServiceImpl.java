@@ -1,16 +1,28 @@
 package TestOnly.MVC_.CaseStudyTask1.Service;
 
-import TestOnly.MVC_.CaseStudyTask1.Model.Employee;
+import TestOnly.MVC_.CaseStudyTask1.Model.Facility;
 
-import java.util.List;
+import java.util.*;
 
-import static TestOnly.MVC_.CaseStudyTask1.Service.EmployeeServiceImpl.employeeList;
-
-public abstract class FacilityServiceImpl implements IFacilityService {
+public class FacilityServiceImpl implements IFacilityService {
+    static LinkedHashMap<Integer, Facility> facilityList = new LinkedHashMap<Integer,Facility>();
+    @Override
+    public void add(Facility facility) {
+        facilityList.put(0,facility);
+    }
 
     @Override
     public void add() {
 
+    }
+
+    @Override
+    public void edit(String code, Facility facility) {
+        for (int i = 0; i < facilityList.size(); i++) {
+            if (Objects.equals(facilityList.get(i).getDeviceCode(),code)) {
+                facilityList.get(i).setDeviceCode(Integer.parseInt(code));
+            }
+        }
     }
 
     @Override
@@ -19,8 +31,9 @@ public abstract class FacilityServiceImpl implements IFacilityService {
     }
 
     @Override
-    public List<Employee> display() {
-    return employeeList;
+    public List<Facility> display() {
+
+        return (List<Facility>) facilityList;
     }
 
     @Override
