@@ -1,9 +1,7 @@
 package TestOnly.MVC_.CaseStudyTask1.Controllers;
 
-import TestOnly.MVC_.CaseStudyTask1.Model.Employee;
 import TestOnly.MVC_.CaseStudyTask1.Service.EmployeeServiceImpl;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class FuramaController {
@@ -41,7 +39,7 @@ public class FuramaController {
                 System.out.println(" ");
         }
     } while(true);
-    }
+}
     public static void showMenuChoice() {
         System.out.println("=== Main Menu ===");
         System.out.println("Choose from menu: ");
@@ -81,6 +79,10 @@ public class FuramaController {
                 System.out.println("Oops! Waiting for fixing problems");
         }
     }
+//    public static void inputServiceCode() {
+//        System.out.println("Input service code");
+//        String serviceCode = sc.nextLine();
+//    }
     public static void menuCustomerManagement() {//choice 2
         System.out.println("=== Customer Manager ===");
         System.out.println("1. Display list customers");
