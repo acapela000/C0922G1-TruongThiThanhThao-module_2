@@ -14,39 +14,48 @@ public class CustomerServiceImpl implements ICustomerService {
         customerList.add(customer);
     }
 
-    @Override
-    public void add() {
 
+    public List<Customer> edit(Customer customer) {
+        for (int i = 0; i < customerList.size(); i++) {
+            if (Objects.equals(customerList.get(i).getPersonalCode(), customer.getPersonalCode())) {
+                //customerList.get(i).setPersonalCode(customer.getPersonalCode()); id will not change
+                customerList.get(i).setPhoneNumber(customer.getPhoneNumber());
+                customerList.get(i).setDateOfBirth(customer.getDateOfBirth());
+                customerList.get(i).setGender(customer.getGender());
+                customerList.get(i).setFirstName(customer.getFirstName());
+                customerList.get(i).setLastName(customer.getLastName());
+                customerList.get(i).setAddress(customer.getAddress());
+                customerList.get(i).setEmail(customer.getEmail());
+            }
+        }
+        return customerList;
     }
 
-    @Override
-    public void edit(String code,Customer customer) {
+
+        @Override
+        public void delete(Customer customer) {
+            List<Customer> customerList1 = customerList;
         for (int i = 0; i < customerList.size(); i++) {
-           if (Objects.equals(customerList.get(i).getPersonalCode(), code)) {
-               customerList.get(i).setPersonalCode(Integer.parseInt(code));
-           }
+            if (customerList.get(i).getPersonalCode().equals(customer.getPersonalCode())) {
+                customerList.remove(customer.getPersonalCode());
+            }
         }
     }
 
-    @Override
-    public void edit() {
-
-    }
 
     @Override
     public List<Customer> display() {
-
         return customerList;
     }
 
     @Override
-    public void delete() {
-
-    }
-
-    @Override
-    public void search() {
-
+    public Customer search(Customer customer) {
+        for (Customer searchCode : customerList) {
+            if (searchCode.getPersonalCode().equals(customer.getPersonalCode())) {
+                return searchCode;
+            }
+        }
+        return null;
     }
 
     @Override

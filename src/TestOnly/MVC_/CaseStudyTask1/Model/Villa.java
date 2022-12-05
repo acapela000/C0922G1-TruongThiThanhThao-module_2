@@ -11,6 +11,46 @@ public class Villa extends Facility {
         super(typeOfService, capasityOfPeople, timeOfStay, cleaningService, rentCar, checkInDate, checkOutDate);
     }
 
+    public boolean isCleaningPool() {
+        return cleaningPool;
+    }
+
+    public void setCleaningPool(boolean cleaningPool) {
+        this.cleaningPool = cleaningPool;
+    }
+
+    public boolean isGardening() {
+        return gardening;
+    }
+
+    public void setGardening(boolean gardening) {
+        this.gardening = gardening;
+    }
+
+    public boolean isPetCaring() {
+        return petCaring;
+    }
+
+    public void setPetCaring(boolean petCaring) {
+        this.petCaring = petCaring;
+    }
+
+    public boolean isParkForKids() {
+        return parkForKids;
+    }
+
+    public void setParkForKids(boolean parkForKids) {
+        this.parkForKids = parkForKids;
+    }
+
+    public int getNumberOfRoom() {
+        return numberOfRoom;
+    }
+
+    public void setNumberOfRoom(int numberOfRoom) {
+        this.numberOfRoom = numberOfRoom;
+    }
+
     @Override
     public String toString() {
         return "== Villa ==" + "\n" +

@@ -1,16 +1,16 @@
 package TestOnly.MVC_.CaseStudyTask1.Model;
 
 public abstract class Facility {
-    int deviceCode;
-    int typeOfService;
+    String deviceCode;
     int capasityOfPeople;
     int timeOfStay;
     boolean cleaningService;
     boolean rentCar;
+    String typeOfService;
     String checkInDate;
     String checkOutDate;
 
-    public Facility(int deviceCode,int typeOfService, int capasityOfPeople, int timeOfStay, boolean cleaningService, boolean rentCar, String checkInDate, String checkOutDate) {
+    public Facility(String deviceCode, String typeOfService, int capasityOfPeople, int timeOfStay, boolean cleaningService, boolean rentCar, String checkInDate, String checkOutDate) {
         this.deviceCode = deviceCode;
         this.typeOfService = typeOfService;
         this.capasityOfPeople = capasityOfPeople;
@@ -21,11 +21,17 @@ public abstract class Facility {
         this.checkOutDate = checkOutDate;
     }
 
-    public int getDeviceCode() {
+    public Facility() {
+    }
+
+    public Facility(String typeOfService, int capasityOfPeople, int timeOfStay, boolean cleaningService, boolean rentCar, String checkInDate, String checkOutDate) {
+    }
+
+    public String getDeviceCode() {
         return deviceCode;
     }
 
-    public void setDeviceCode(int deviceCode) {
+    public void setDeviceCode(String deviceCode) {
         this.deviceCode = deviceCode;
     }
 

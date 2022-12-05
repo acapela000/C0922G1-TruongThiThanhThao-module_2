@@ -1,28 +1,19 @@
 package TestOnly.MVC_.CaseStudyTask1.Service;
 
+import TestOnly.MVC_.CaseStudyTask1.Model.Employee;
 import TestOnly.MVC_.CaseStudyTask1.Model.Facility;
 
-import java.util.List;
+import java.util.Collection;
 
-public interface IFacilityService extends IService {
-    void add(Facility facility);
+public interface IFacilityService extends IService<Facility> {
 
-    @Override
-    void add();
-
-    @Override
-    void edit();
-
-    void edit(String code, Facility facility);
-
-    @Override
-    List<Facility> display();
-
-    @Override
-    void delete();
-
-    @Override
-    void search();
+//    void add(Facility facility);
+//
+//    void edit(String code, Facility facility);
+//
+//    void delete(Facility facility);
+//
+//    void search();
 
     void manageMaintenanceDeadline();
 }

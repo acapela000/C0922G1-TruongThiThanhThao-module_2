@@ -1,41 +1,42 @@
 package TestOnly.MVC_.CaseStudyTask1.Service;
 
-import TestOnly.MVC_.CaseStudyTask1.Model.Employee;
+import TestOnly.MVC_.CaseStudyTask1.Model.Booking;
+import TestOnly.MVC_.CaseStudyTask1.Model.Customer;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-import static TestOnly.MVC_.CaseStudyTask1.Service.EmployeeServiceImpl.employeeList;
-
-public class BookingServiceImpl implements IBookingService {
-
-    @Override
-    public void add() {
-
-    }
-
-    @Override
-    public void edit() {
-
-    }
-
-    @Override
-    public List<Employee> display() {
-        return employeeList;
-    }
-
-    @Override
-    public void delete() {
-
-    }
-
-    @Override
-    public void search() {
-
-    }
-
-    @Override
-    public void manageBookingTime() {
-
-    }
-
-}
+//public class BookingServiceImpl implements IBookingService {
+//    static List<Booking> bookingList = new ArrayList<>();
+//
+//    @Override
+//    public void add() {
+//    }
+//
+//    @Override
+//    public void delete() {
+//    }
+//
+//    @Override
+//    public void edit() {
+//    }
+//
+//    @Override
+//    public List<Booking> display() {
+//        return bookingList;
+//    }
+//
+//    @Override
+//    public Booking search(Booking booking) {
+//        for (Booking searchCode : bookingList) {
+//             if (searchCode.)
+//        }
+//    }
+//
+//    @Override
+//    public void manageBookingTime() {
+//
+//    }
+//
+//}

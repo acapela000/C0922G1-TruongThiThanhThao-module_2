@@ -1,49 +1,51 @@
 package TestOnly.MVC_.CaseStudyTask1.Service;
 
+import TestOnly.MVC_.CaseStudyTask1.Model.Customer;
+import TestOnly.MVC_.CaseStudyTask1.Model.Employee;
 import TestOnly.MVC_.CaseStudyTask1.Model.Facility;
 
 import java.util.*;
 
 public class FacilityServiceImpl implements IFacilityService {
-    static LinkedHashMap<Integer, Facility> facilityList = new LinkedHashMap<Integer,Facility>();
+    static LinkedHashMap<String, Facility> facilityList = new LinkedHashMap<String,Facility>();
+
     @Override
     public void add(Facility facility) {
-        facilityList.put(0,facility);
+        facilityList.put(facility.getDeviceCode(),facility);
     }
 
-    @Override
-    public void add() {
-
-    }
 
     @Override
-    public void edit(String code, Facility facility) {
-        for (int i = 0; i < facilityList.size(); i++) {
-            if (Objects.equals(facilityList.get(i).getDeviceCode(),code)) {
-                facilityList.get(i).setDeviceCode(Integer.parseInt(code));
-            }
+    public List<Facility> edit(Facility facility) {
+        if (facilityList.containsKey(facility.getDeviceCode())) {
+            facilityList.replace(facility.getDeviceCode(), facility);
         }
-    }
-
-    @Override
-    public void edit() {
-
+//        for (int i = 0; i < facilityList.size(); i++) {
+//            if (Objects.equals(facilityList.get(i).getDeviceCode(),code)) {
+//                facilityList.get(i).setDeviceCode(code);
+//            }
+//        }
+        return new ArrayList<>(facilityList.values());
     }
 
     @Override
     public List<Facility> display() {
-
-        return (List<Facility>) facilityList;
+        return new ArrayList<>(facilityList.values());
     }
 
     @Override
-    public void delete() {
-
+    public void delete(Facility facility) {
+        facilityList.remove(facility.getDeviceCode());
+//        for (int i = 0; i < facilityList.size(); i++) {
+//            if (facilityList.get(i).getDeviceCode().equals(facility.getDeviceCode())) {
+//                facilityList.remove(facility.getDeviceCode());
+//            }
+//        }
     }
 
     @Override
-    public void search() {
-
+    public Facility search(Facility facility) {
+        return facilityList.get(facility.getDeviceCode());
     }
 
     @Override

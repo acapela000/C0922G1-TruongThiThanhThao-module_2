@@ -5,8 +5,32 @@ public class Room extends Facility {
     boolean mealService;
     boolean beautyService;
 
-    public Room(int typeOfService, int capasityOfPeople, int timeOfStay, boolean cleaningService, boolean rentCar, String checkInDate, String checkOutDate) {
+    public Room(String typeOfService, int capasityOfPeople, int timeOfStay, boolean cleaningService, boolean rentCar, String checkInDate, String checkOutDate) {
         super(typeOfService, capasityOfPeople, timeOfStay, cleaningService, rentCar, checkInDate, checkOutDate);
+    }
+
+    public int getTypeOfBed() {
+        return typeOfBed;
+    }
+
+    public void setTypeOfBed(int typeOfBed) {
+        this.typeOfBed = typeOfBed;
+    }
+
+    public boolean isMealService() {
+        return mealService;
+    }
+
+    public void setMealService(boolean mealService) {
+        this.mealService = mealService;
+    }
+
+    public boolean isBeautyService() {
+        return beautyService;
+    }
+
+    public void setBeautyService(boolean beautyService) {
+        this.beautyService = beautyService;
     }
 
     @Override

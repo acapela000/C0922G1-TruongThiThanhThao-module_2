@@ -1,6 +1,13 @@
 package TestOnly.MVC_.CaseStudyTask1.Controllers;
 
+import TestOnly.MVC_.CaseStudyTask1.Model.Employee;
+import TestOnly.MVC_.CaseStudyTask1.Model.Customer;
+import TestOnly.MVC_.CaseStudyTask1.Model.Booking;
+import TestOnly.MVC_.CaseStudyTask1.Model.Facility;
+//import TestOnly.MVC_.CaseStudyTask1.Service.BookingServiceImpl;
+import TestOnly.MVC_.CaseStudyTask1.Service.CustomerServiceImpl;
 import TestOnly.MVC_.CaseStudyTask1.Service.EmployeeServiceImpl;
+import TestOnly.MVC_.CaseStudyTask1.Service.FacilityServiceImpl;
 
 import java.util.Scanner;
 
@@ -9,6 +16,9 @@ public class FuramaController {
     private static final Scanner sc = new Scanner(System.in);
 
     static EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
+    static CustomerServiceImpl customerService = new CustomerServiceImpl();
+    static FacilityServiceImpl facilityService = new FacilityServiceImpl();
+    //static BookingServiceImpl bookingService = new BookingServiceImpl();
 
     public static void displayMenu() {
     //do method này là static nên bên Main dùng class gọi method luôn, ko cần tạo đối tượng nữa
@@ -63,14 +73,29 @@ public class FuramaController {
         switch (choice) {
             case 1:
                 employeeService.display();
+                break;
             case 2:
-                employeeService.add();
+                Employee employee = new Employee("T123",907123456,"05/06/2000","Male","Truong","Thao","Da Nang","thao@gmail.vn");
+                employeeService.add(employee);
                 break;
             case 3:
-                employeeService.delete();
+
+                System.out.print("Input code to delete: ");
+                String deleteCode = sc.nextLine();
+                //employeeService.delete();
                 break;
             case 4:
-                employeeService.edit();
+                System.out.print("Input employee's code: ");
+                String editCode = sc.nextLine();
+                System.out.print("Input employee's name to edit: ");
+                String editEmployeeName = sc.nextLine();
+                System.out.print("Input employee's address to edit: ");
+                String editEmployeeAddress = sc.nextLine();
+                Employee updatedE = new Employee("Thanh","New York");
+//                updatedE.setPersonalCode(editCode);
+//                updatedE.setFirstName(editEmployeeName);
+//                updatedE.setAddress(editEmployeeAddress);
+                employeeService.edit(updatedE);
                 break;
             case 5:
                 displayMenu();
@@ -79,10 +104,7 @@ public class FuramaController {
                 System.out.println("Oops! Waiting for fixing problems");
         }
     }
-//    public static void inputServiceCode() {
-//        System.out.println("Input service code");
-//        String serviceCode = sc.nextLine();
-//    }
+
     public static void menuCustomerManagement() {//choice 2
         System.out.println("=== Customer Manager ===");
         System.out.println("1. Display list customers");
@@ -93,6 +115,23 @@ public class FuramaController {
         int choice = Integer.parseInt(sc.nextLine());
 
         switch (choice) {
+            case 1:
+                customerService.display();
+                break;
+            case 2:
+                Customer customer = new Customer("Aloha",345,"2/3/1999","Famale","John","Smith","HCM","xyz@code.co");
+                customerService.add(customer);
+                break;
+            case 3:
+                System.out.print("Input customer's code to edit: ");
+                String editCustomerCode = sc.nextLine();
+                System.out.print("Input customer's name to edit: ");
+                String editCustomerName = sc.nextLine();
+                System.out.print("Input customer's address to edit: ");
+                String editCustomerAddress = sc.nextLine();
+                Customer editC = new Customer("Truong","Ha Noi");
+                customerService.edit(editC);
+                break;
             case 4:
                 displayMenu();
                 break;
@@ -110,6 +149,12 @@ public class FuramaController {
         int choice = Integer.parseInt(sc.nextLine());
 
         switch (choice) {
+            case 1:
+                facilityService.display();
+                break;
+            case 2://add
+
+                break;
             case 4:
                 displayMenu();
                 break;
@@ -126,8 +171,13 @@ public class FuramaController {
         int choice = Integer.parseInt(sc.nextLine());
         switch (choice) {
             case 1:
-                System.out.println("1. Add new booking");
+                System.out.print("Input booking code to add: ");
+                String addCode = sc.nextLine();
+                Booking booking = new Booking();
+
                 break;
+            case 2:
+                System.out.println();
             case 3:
                displayMenu();
                break;

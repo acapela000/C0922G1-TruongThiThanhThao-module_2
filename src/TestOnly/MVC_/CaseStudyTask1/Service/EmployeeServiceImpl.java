@@ -1,13 +1,18 @@
 package TestOnly.MVC_.CaseStudyTask1.Service;
 
+import TestOnly.MVC_.CaseStudyTask1.Model.Customer;
 import TestOnly.MVC_.CaseStudyTask1.Model.Employee;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class EmployeeServiceImpl implements IEmployeeService {
     static List<Employee> employeeList = new ArrayList<>();
+
+    @Override
+    public List<Employee> display() {
+        return employeeList;
+    }
 
     @Override
     public void add(Employee employee) {
@@ -15,39 +20,39 @@ public class EmployeeServiceImpl implements IEmployeeService {
     }
 
     @Override
-    public void add() {
-
-    }
-
-    @Override
-    public void edit(String code, Employee employee) {
+    public void delete(Employee employee) {
         for (int i = 0; i < employeeList.size(); i++) {
-            if (Objects.equals(employeeList.get(i).getPersonalCode(), code)) {
-                employeeList.get(i).setPersonalCode(Integer.parseInt(code));
+            if (employeeList.get(i).getPersonalCode().equals(employee.getPersonalCode())) {
+                employeeList.remove(employee.getPersonalCode());
             }
         }
     }
 
-    @Override
-    public void edit() {
-
-    }
-
-    @Override
-    public List<Employee> display() {
-
+    public List<Employee> edit(Employee employee) {
+        for (int i = 0; i < employeeList.size(); i++) {
+            if (employeeList.get(i).getPersonalCode().equals(employee.getPersonalCode())) {
+                employeeList.get(i).setWorkHour(employee.getWorkHour());
+                employeeList.get(i).setSalary(employee.getSalary());
+                employeeList.get(i).setTypeOfContract(employee.getTypeOfContract());
+                employeeList.get(i).setWorkAttitude(employee.getWorkAttitude());
+                employeeList.get(i).setTypeOfDegree(employee.getTypeOfDegree());
+                employeeList.get(i).setExtraPay(employee.isExtraPay());
+                employeeList.get(i).setMarriageStatus(employee.isMarriageStatus());
+            }
+        }
         return employeeList;
     }
 
     @Override
-    public void delete() {
-
+    public Employee search(Employee employee) {
+        for (Employee result : employeeList) {
+            if (result.getPersonalCode().equals(employee.getPersonalCode())) {
+                return result;
+            }
+        }
+        return null;
     }
 
-    @Override
-    public void search() {
-
-    }
     @Override
     public void manageContractDeadline() {
 

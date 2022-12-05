@@ -11,7 +11,8 @@ public class TestMain {
     public static  String SERVICE_CODE = "^[S][V]([V][L]|[R][O])[-][0-9]{4}$";
     public static  String SERVICE_NAME = "^[A-Z]{1}[a-z]\\w+$";
     public static String SERVICE_ROOM = "^([S][V][R][O])[-][A-Z]{1}[a-z]\\w+$";
-    private static String serviceCode, serviceName,serviceRoom;
+    public static String DATE_OF_BIRTH = "^[0-9]{2}(([0]|[1])[0-9]){2}[0-9]{4}$";
+    private static String serviceCode, serviceName,serviceRoom,getDateOfBirth,g;
 
     public static void main(String[] args) {
         do {
@@ -25,9 +26,11 @@ public class TestMain {
                 pattern = Pattern.compile(SERVICE_CODE);
                 pattern = Pattern.compile(SERVICE_NAME);
                 pattern = Pattern.compile(SERVICE_ROOM);
+                pattern = Pattern.compile(DATE_OF_BIRTH);
                 matcher = pattern.matcher(serviceCode);
                 matcher = pattern.matcher(serviceName);
                 matcher = pattern.matcher(serviceRoom);
+                matcher = pattern.matcher(getDateOfBirth);
                 if (matcher.matches() == false) {
                     throw new Exception(String.valueOf(matcher));
                 }
@@ -37,6 +40,5 @@ public class TestMain {
             }
             FuramaController.displayMenu();
         } while (true);
-
     }
 }

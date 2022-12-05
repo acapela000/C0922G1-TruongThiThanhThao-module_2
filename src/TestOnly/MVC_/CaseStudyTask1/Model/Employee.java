@@ -9,12 +9,67 @@ public class Employee extends Person {
     boolean extraPay;
     boolean marriageStatus;
 
-    public Employee(int personalCode, int phoneNumber, String dateOfBirth, String gender, String firstName, String lastName, String address, String email) {
-        super(personalCode, phoneNumber, dateOfBirth, gender, firstName, lastName, address, email);
+    public Employee(String thanh, String new_york) {}
 
+    public Employee(String personalCode, int phoneNumber, String dateOfBirth, String gender, String firstName, String lastName, String address, String email) {
+        super(personalCode, phoneNumber, dateOfBirth, gender, firstName, lastName, address, email);
     }
 
+    public int getWorkHour() {
+        return workHour;
+    }
 
+    public void setWorkHour(int workHour) {
+        this.workHour = workHour;
+    }
+
+    public long getSalary() {
+        return salary;
+    }
+
+    public void setSalary(long salary) {
+        this.salary = salary;
+    }
+
+    public String getTypeOfContract() {
+        return typeOfContract;
+    }
+
+    public void setTypeOfContract(String typeOfContract) {
+        this.typeOfContract = typeOfContract;
+    }
+
+    public String getWorkAttitude() {
+        return workAttitude;
+    }
+
+    public void setWorkAttitude(String workAttitude) {
+        this.workAttitude = workAttitude;
+    }
+
+    public String getTypeOfDegree() {
+        return typeOfDegree;
+    }
+
+    public void setTypeOfDegree(String typeOfDegree) {
+        this.typeOfDegree = typeOfDegree;
+    }
+
+    public boolean isExtraPay() {
+        return extraPay;
+    }
+
+    public void setExtraPay(boolean extraPay) {
+        this.extraPay = extraPay;
+    }
+
+    public boolean isMarriageStatus() {
+        return marriageStatus;
+    }
+
+    public void setMarriageStatus(boolean marriageStatus) {
+        this.marriageStatus = marriageStatus;
+    }
 
     @Override
     public String toString() {
