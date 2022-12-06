@@ -1,23 +1,33 @@
 package ss11_Stack_Queue;
 
+import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Stack;
 
 public class ReverseTheArray {
     public static void main(String[] args) {
-        System.out.println("Input a word");
         Scanner sc = new Scanner(System.in);
+        System.out.print("Input an integer: ");
+        int number = Integer.parseInt(sc.nextLine());
+        Stack<Integer> stackBeforeReverse = new Stack<>();
 
-        //int[] array = new int[];
-        Stack<Scanner> stack = new Stack<>();
-        stack.push(sc);
-        System.out.println(stack);
-        /*for (int i = 1; i < array.length; i++) {
-            stack.push(array[i]);
+        for (int i = 0; i < number; i++) {
+            System.out.print("Input " + (i+1) + " integer: ");
+            stackBeforeReverse.push(Integer.parseInt(sc.nextLine()));
+        }
+        Iterator<Integer> iterator = stackBeforeReverse.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next() + "\t");
+        }
+        Stack<Integer> temporaryStack = new Stack<>();
+        Stack<Integer> stackAfterReverse = new Stack<>();
 
-        } return stack;*/
-
-        //System.out.println(stack);
-
+        int temp;
+        for (int indexOfStack = 0; indexOfStack < stackBeforeReverse.size(); indexOfStack++) {
+            temp = temporaryStack.push(stackBeforeReverse.pop());
+            stackAfterReverse.push(temporaryStack.push(temp));
+            stackAfterReverse.push(stackBeforeReverse.pop());
+        }
+        System.out.println("After reverse: " + stackAfterReverse);
     }
 }
