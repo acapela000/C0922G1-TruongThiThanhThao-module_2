@@ -23,10 +23,11 @@ public class ReverseTheArray {
         Stack<Integer> stackAfterReverse = new Stack<>();
 
         int temp;
-        for (int indexOfStack = 0; indexOfStack < stackBeforeReverse.size(); indexOfStack++) {
-            temp = temporaryStack.push(stackBeforeReverse.pop());
-            stackAfterReverse.push(temporaryStack.push(temp));
+        for (int indexOfStack = 0; indexOfStack < number; indexOfStack++) {
             stackAfterReverse.push(stackBeforeReverse.pop());
+//            temp = temporaryStack.push(stackBeforeReverse.pop());
+//            stackAfterReverse.push(temporaryStack.push(temp));
+//            stackAfterReverse.push(stackBeforeReverse.pop());
         }
         System.out.println("After reverse: " + stackAfterReverse);
     }
